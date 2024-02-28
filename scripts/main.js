@@ -53,13 +53,7 @@ businessItem.forEach(el => {
     })
 });
 
-const myAtropos = Atropos({
-    el: '.my-atropos',
-    shadow: false,
-    alwaysActive: true,
-    highlight: false,
-    alwaysActive: true,
-});
+
 
 
 let splash = document.querySelector('.splash-box');
@@ -124,4 +118,19 @@ burgerButton.addEventListener('click', function (e) {
 
 
 
+})
+
+window.addEventListener('load', function(){
+    console.log(window.innerWidth)
+    if (this.window.innerWidth < 768){
+            myAtropos.destroy();
+    } else {
+        const myAtropos = Atropos({
+            el: '.my-atropos',
+            shadow: false,
+            alwaysActive: true,
+            highlight: false,
+            alwaysActive: true,
+        });
+    }
 })
